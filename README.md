@@ -4,6 +4,17 @@
 
 ![TasteRouter: find the neighbourhood that already loves your idea](docs/cover.jpg)
 
+## ⚡ Judge fast path — 30 seconds
+
+1. Open the **live demo**: https://tasterouter.tasterouter.workers.dev
+2. Click the preset **"🎧 Vinyl wine bar · NYC"** — the agent runs in ~20 s and streams **every step and every Qloo call** to the trace panel (plan → ground → fan out → adapt → scout → score → write → story).
+3. Read the **Taste-Fit card** (Long Island City, 71/100, with its three weighted parts and confidence), the **three Qloo-grounded regulars**, and the **ranked neighbourhoods**.
+4. Click **"What about a smaller budget?"** under *Ask a follow-up* — the agent answers only from that report's stored Qloo evidence, plus one tool call.
+5. Type your own brief for any city (e.g. *Paris, London, Los Angeles*) — every report gets a **share link and a PDF**.
+6. Skim the code: `src/agent.js` (agent loop), `src/qloo.js` (quota-aware Qloo client), `test/core.test.js` (15 tests on a fake Qloo — no keys needed).
+
+The full app also runs locally with zero credentials: `npm install && npm test && npm start`, and ships as an **MCP server** (`npm run mcp`) so Claude, Cursor or Codex can call the same Qloo tools.
+
 Opening a small place means betting your savings on a feeling: that *your people* are out there. TasteRouter is an AI agent for that moment. Describe the place you dream of — *"a tiny vinyl listening bar with natural wine in New York, for people who love Khruangbin, Wong Kar-wai films and Aesop-style design"* — and it finds **the neighbourhood whose residents already share that taste**, introduces you to **your future regulars**, tells the story of your **opening night**, and gives you one number to trust before you sign a lease: the **Taste-Fit Score**.
 
 > Site selection today means foot-traffic counts and rent maps. They tell you how many people walk past — not whether any of them will love what you're making. Qloo knows where taste lives. TasteRouter turns that into a decision you can feel good about.
